@@ -1,0 +1,20 @@
+
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "AWS CloudFormation Template for a simple web application",
+    "Resources": {
+        "EC2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "InstanceType": "wat",
+                "ImageId": "wat",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "wattttttt"
+                    }
+                ]
+            }
+        }
+    }
+}
