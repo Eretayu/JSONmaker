@@ -5,8 +5,6 @@ def giveOptions():
     optionOne = input("Welcome to the AWS Cloud Formation wizard! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'")
     if optionOne == "a":
         print("Guided Construction")
-        with open(Guided.py, "r") as file:
-            exec(file.read())
     elif optionOne == "b":
         print("Advanced Construction")
 
