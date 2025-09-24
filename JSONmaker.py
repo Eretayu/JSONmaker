@@ -1,7 +1,23 @@
 from module import MetaData
 
+
 def giveOptions():
-    print("If you would like a simple way to create basic Cloud Formation template, type 'Guided Construction' if you want more control over your template, type 'Advanced Construction'")
+    optionOne = input("Welcome to the AWS Cloud Formation wizard! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'")
+    if optionOne == "a":
+        print("Guided Construction")
+        with open(Guided.py, "r") as file:
+            exec(file.read())
+    elif optionOne == "b":
+        print("Advanced Construction")
+
+    else:
+        print("Invalid option, please try again")
+        giveOptions()
+
+
+
+giveOptions()
+
 
 #Creating .json template to be modified by the program
 templateText = """
@@ -51,12 +67,9 @@ f1.close()
 
 
 
-begin = input("Welcome to the AWS Cloud Formation wizard! \nTo begin the program, pless type 'continue'. \nType anything else to quit the program.\n")
-if begin == "continue":
-    queryMetadata = input("To input any Template-level metadata, type 'Template Metadata'")
-else:
-    quit
-
+"""
+queryMetadata = input("To input any Template-level metadata, type 'Template Metadata'")
 if queryMetadata == "Template Metadata":
     test1 = MetaData("template metadata", "")
     test1.queryUser()
+"""
