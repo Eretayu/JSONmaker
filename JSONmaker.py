@@ -14,8 +14,6 @@ heading = f""" {ORANGE}
 
 print(heading)
 
-
-
 stateA = "<incomplete>"
 stateB = "<complete>"
 stateC = " <optional>"
