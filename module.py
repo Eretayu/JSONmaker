@@ -45,4 +45,4 @@ class Description:
             print("No description inserted")
         else:
             self.userInput = userInput
-            self.addMetadata()
+            self.addDescription()

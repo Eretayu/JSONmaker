@@ -2,7 +2,7 @@
 {
   "AWSTemplateFormatVersion" : "version date",
 
-  "Description" : "JSON string",
+  "Description" : "TEST",
 
   "Metadata" : {
     template metadata
