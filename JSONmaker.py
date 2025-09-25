@@ -1,18 +1,16 @@
 from module import MetaData
-
 from module import Description
-ORANGE = '\033[38;5;208m'
-WHITE =  '\033[0m'
+import curses
+from curses import wrapper
+import time
 
-heading = f""" {ORANGE}
+heading = f""" 
   ___  _    _ _____     ___ _____  _____ _   _                 _             
  / _ \| |  | /  ___|   |_  /  ___||  _  | \ | |               | |            
 / /_\ \ |  | \ `--.      | \ `--. | | | |  \| |_ __ ___   __ _| | _____ _ __ 
 |  _  | |/\| |`--. \     | |`--. \| | | | . ` | '_ ` _ \ / _` | |/ / _ \ '__|
 | | | \  /\  /\__/ / /\__/ /\__/ /\ \_/ / |\  | | | | | | (_| |   <  __/ |   
 \_| |_/\/  \/\____/  \____/\____/  \___/\_| \_/_| |_| |_|\__,_|_|\_\___|_|  \n"""
-
-print(heading)
 
 stateA = "<incomplete>"
 stateB = "<complete>"
@@ -24,9 +22,46 @@ formatStateTwo = stateD
 descriptionStateOne = stateA
 descriptionStateTwo = stateD
 
+def main (stdscr):
+    curses.init_pair(1, curses.COLOR_CYAN, curses.COLOR_BLACK)
+    curses.init_pair(2, curses.COLOR_GREEN, curses.COLOR_BLACK)
+    height, width = stdscr.getmaxyx()
+
+   
+    #stdscr.clear()
+    #stdscr.addstr(heading, curses.color_pair(1))
+
+    def progressBar():
+            i = 0
+            while i < width:
+                stdscr.addstr("#", curses.color_pair(2))
+                stdscr.refresh()
+                i += 1
+                time.sleep(0.02)
+                if i == width:
+                    return
+
+    #progressBar()
+
+    y = 0
+    while True:
+         
+         key = stdscr.getkey()
+         if key == "KEY_UP":
+              y -= 1
+         elif key == "KEY_DOWN":
+              y += 1
+
+         stdscr.clear()
+         stdscr.addstr(y, ">", curses.A_BLINK)
+         stdscr.refresh()
+
+wrapper(main)
+
+
 
 while True:
-    text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
+    text = f"Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
     optionOne = input(text)
     if optionOne == "a":
         print("Guided Construction")
@@ -38,6 +73,10 @@ while True:
         break
     else:
         print("Invalid option, please try again")
+
+
+
+
 
 
 """
