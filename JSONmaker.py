@@ -1,6 +1,5 @@
-from module import MetaData
+from module import OptionList
 
-from module import Description
 ORANGE = '\033[38;5;208m'
 WHITE =  '\033[0m'
 
@@ -24,7 +23,6 @@ formatStateTwo = stateD
 descriptionStateOne = stateA
 descriptionStateTwo = stateD
 
-
 while True:
     text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
     optionOne = input(text)
@@ -42,10 +40,26 @@ while True:
     if aConstruction == "1":
         pass
     elif aConstruction == "2":
-        object1 = Description("JSON string", "")
-        object1.queryUser()
+        description1 = OptionList("JSON string", "", "description")
+        description1.queryUser()
         break
     elif aConstruction == "3":
+        metadata1 = OptionList("template metadata", "", "metadata")
+        metadata1.queryUser()
+        break
+    elif aConstruction == "4":
+        pass
+    elif aConstruction == "5":
+        pass
+    elif aConstruction == "6":
+        pass
+    elif aConstruction == "7":
+        pass
+    elif aConstruction == "8":
+        pass
+    elif aConstruction == "9":
+        pass
+    elif aConstruction == "10":
         pass
     else:
         print("Invalid option, please try again")
