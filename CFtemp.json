@@ -5,7 +5,7 @@
   "Description" : "JSON string",
 
   "Metadata" : {
-    test
+    template metadata
   },
 
   "Parameters" : {
@@ -21,7 +21,7 @@
   },
 
   "Conditions" : {
-    dfasghdjfk
+    set of conditions
   },
 
   "Transform" : {

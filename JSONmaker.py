@@ -1,4 +1,5 @@
 from module import OptionList
+from module import AdvancedConstruction
 
 ORANGE = '\033[38;5;208m'
 WHITE =  '\033[0m'
@@ -12,16 +13,6 @@ heading = f""" {ORANGE}
 \_| |_/\/  \/\____/  \____/\____/  \___/\_| \_/_| |_| |_|\__,_|_|\_\___|_|  \n"""
 
 print(heading)
-
-stateA = "<incomplete>"
-stateB = "<complete>"
-stateC = " <optional>"
-stateD = " <required>"
-
-formatStateOne = stateA
-formatStateTwo = stateD
-descriptionStateOne = stateA
-descriptionStateTwo = stateD
 
 #Creating .json template to be modified by the program
 templateText = """
@@ -70,7 +61,6 @@ f1.write(templateText)
 f1.close()
 
 
-
 while True:
     text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
     optionOne = input(text)
@@ -87,7 +77,7 @@ program = True
 
 while program == True:
   while aCon == False:
-    print(f"Here are the 10 different options to configure to complete your template.\n 1: Format Version {formatStateOne}{formatStateTwo} \n 2: Description {descriptionStateOne}{descriptionStateTwo} \n 3: Metadata")
+    message = AdvancedConstruction()
     aConstruction = input("please input the number of the option you would like to change:")
     aCon = True      
 
