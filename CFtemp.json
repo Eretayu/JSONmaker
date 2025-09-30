@@ -2,10 +2,10 @@
 {
   "AWSTemplateFormatVersion" : "version date",
 
-  "Description" : "testttt",
+  "Description" : "JSON string",
 
   "Metadata" : {
-    TEST
+    test
   },
 
   "Parameters" : {
@@ -21,7 +21,7 @@
   },
 
   "Conditions" : {
-    set of conditions
+    dfasghdjfk
   },
 
   "Transform" : {

@@ -23,60 +23,6 @@ formatStateTwo = stateD
 descriptionStateOne = stateA
 descriptionStateTwo = stateD
 
-
-
-while True:
-    text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
-    optionOne = input(text)
-    if optionOne == "a":
-        print("Guided Construction")
-        break
-    elif optionOne == "b":
-        aCon = False
-        break
-    else:
-        print("Invalid option, please try again")
-
-program = True
-
-while program == True:
-  while aCon == False:
-    print(f"Here are the 10 different options to configure to complete your template.\n 1: Format Version {formatStateOne}{formatStateTwo} \n 2: Description {descriptionStateOne}{descriptionStateTwo} \n 3: Metadata")
-    aConstruction = input("please input the number of the option you would like to change:")
-    aCon = True      
-
-  while aCon == True:
-      if aConstruction == "1":
-          pass
-      elif aConstruction == "2":
-          description1 = OptionList("JSON string", "", "description")
-          description1.queryUser()
-          aCon = False
-      elif aConstruction == "3":
-          metadata1 = OptionList("template metadata", "", "metadata")
-          metadata1.queryUser()
-          aCon = False
-      elif aConstruction == "4":
-        pass
-      elif aConstruction == "5":
-        pass
-      elif aConstruction == "6":
-        pass
-      elif aConstruction == "7":
-        pass
-      elif aConstruction == "8":
-        pass
-      elif aConstruction == "9":
-        pass
-      elif aConstruction == "10":
-        pass
-      else:
-        print("Invalid option, please try again")
-        break
-
-
-
-
 #Creating .json template to be modified by the program
 templateText = """
 {
@@ -124,3 +70,70 @@ f1.write(templateText)
 f1.close()
 
 
+
+while True:
+    text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
+    optionOne = input(text)
+    if optionOne == "a":
+        print("Guided Construction")
+        break
+    elif optionOne == "b":
+        aCon = False
+        break
+    else:
+        print("Invalid option, please try again")
+
+program = True
+
+while program == True:
+  while aCon == False:
+    print(f"Here are the 10 different options to configure to complete your template.\n 1: Format Version {formatStateOne}{formatStateTwo} \n 2: Description {descriptionStateOne}{descriptionStateTwo} \n 3: Metadata")
+    aConstruction = input("please input the number of the option you would like to change:")
+    aCon = True      
+
+  while aCon == True:
+      if aConstruction == "1":
+          pass
+      elif aConstruction == "2":
+          description1 = OptionList("JSON string", "", "description")
+          description1.queryUser()
+          aCon = False
+      elif aConstruction == "3":
+          metadata1 = OptionList("template metadata", "", "metadata")
+          metadata1.queryUser()
+          aCon = False
+      elif aConstruction == "4":
+          metadata1 = OptionList("set of parameters", "", "parameter")
+          metadata1.queryUser()
+          aCon = False
+      elif aConstruction == "5":
+          metadata1 = OptionList("set of rules", "", "rules")
+          metadata1.queryUser()
+          aCon = False
+      elif aConstruction == "6":
+          metadata1 = OptionList("set of mappings", "", "mappings")
+          metadata1.queryUser()
+          aCon = False
+      elif aConstruction == "7":
+          metadata1 = OptionList("template metadata", "", "metadata")
+          metadata1.queryUser()
+          aCon = False        
+      elif aConstruction == "8":
+          metadata1 = OptionList("set of conditions", "", "conditions")
+          metadata1.queryUser()
+          aCon = False        
+      elif aConstruction == "9":
+          metadata1 = OptionList("set of transforms", "", "transforms")
+          metadata1.queryUser()
+          aCon = False        
+      elif aConstruction == "10":
+          metadata1 = OptionList("set of resources", "", "resources")
+          metadata1.queryUser()
+          aCon = False
+      elif aConstruction == "11":
+          metadata1 = OptionList("set of outputs", "", "outputs")
+          metadata1.queryUser()
+          aCon = False
+      else:
+        print("Invalid option, please try again")
+        aCon = False
