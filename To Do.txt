@@ -5,8 +5,9 @@ This is a To Do list of all of the things not yet finish for the Cloud Formation
 
 - Advanced construction : most
  + essentially everything needs to be done, starting with:
-    * The options list:  a list of the ten different parts of the template that the user can change, with movement with arrow keys.
-    * The options states/defaults: the options list should have states visible to the user to show if they have finished each option. There should be defaults for all optional parameters, and a way for the user to see these defautls.
-    * Classes for each of the ten options, that can be called to modify the template. Ideally there should be one class that interacts with the template, and that class is called by the other ten classes, each of which hold the functions specific to their option.
+    DONE * The options list:  a list of the ten different parts of the template that the user can change, with movement with arrow keys.
+    DONE * The options states/defaults: the options list should have states visible to the user to show if they have finished each option. There should be defaults for all optional parameters, and a way for the user to see these defautls.
+    DONE * Classes for each of the ten options, that can be called to modify the template. Ideally there should be one class that interacts with the template, and that class is called by the other ten classes, each of which hold the functions specific to their option.
+    * optionExplainer: less exhaustive than the build in manual, this is a simple explaination of the option the user is at.
     * A built in manual: a way for the user to at any point get a brief explaination of where they are and what they are doing, as well as the AWS resource/template they are interacting with.
     * the Resources option: This is one of the ten options that is the most complicated, as it will have to contain a number of AWS resources (each their own class) that can then be added to the template. This will be the last step, start by making the a class for EC2 instances, and then go from there depending on how uch time I want to spend on the project.

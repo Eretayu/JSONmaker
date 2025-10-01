@@ -85,7 +85,9 @@ while program == True:
 
   while aCon == True:
       if aConstruction == "1":
-          pass
+          format1 = OptionList("version date", "", "format version", advanced_construction, 1)
+          format1.queryUser()
+          aCon = False
       elif aConstruction == "2":
           description1 = OptionList("JSON string", "", "description", advanced_construction, 2)
           description1.queryUser()

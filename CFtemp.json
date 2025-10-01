@@ -1,11 +1,11 @@
 s
 {
-  "AWSTemplateFormatVersion" : "version date",
+  "AWSTemplateFormatVersion" : "2re",
 
   "Description" : "JSON string",
 
   "Metadata" : {
-    DOWN DOWN DOWN
+    template metadata
   },
 
   "Parameters" : {

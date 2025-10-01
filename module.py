@@ -6,6 +6,12 @@ class OptionList:
         self.label = label
         self.advanced_construction = advanced_construction
         self.option_number = option_number
+        
+        if self.option_number == 1:
+            global explaination
+            explaination = "lesgo"
+        elif self.option_number == 2:
+            explaination = "lesgo2"
 
     def addOptionType(self):
         with open("CFtemp.json", "r") as file: #open the file made from the template
@@ -17,6 +23,7 @@ class OptionList:
             file.close() #closing the file
 
     def queryUser(self):
+        print(explaination)
         userInput = input(f"Insert {self.label} for your Cloud Formation template here:")
         if userInput == "":
             print(f"No {self.label} inserted")
@@ -118,3 +125,4 @@ class AdvancedConstruction:
         
         """
         print(self.message)
+
