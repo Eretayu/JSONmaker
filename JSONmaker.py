@@ -75,9 +75,11 @@ while True:
 
 program = True
 
+# Create the AdvancedConstruction instance once
+advanced_construction = AdvancedConstruction()
+
 while program == True:
   while aCon == False:
-    message = AdvancedConstruction()
     aConstruction = input("please input the number of the option you would like to change:")
     aCon = True      
 
@@ -85,43 +87,39 @@ while program == True:
       if aConstruction == "1":
           pass
       elif aConstruction == "2":
-          description1 = OptionList("JSON string", "", "description")
+          description1 = OptionList("JSON string", "", "description", advanced_construction, 2)
           description1.queryUser()
           aCon = False
       elif aConstruction == "3":
-          metadata1 = OptionList("template metadata", "", "metadata")
+          metadata1 = OptionList("template metadata", "", "metadata", advanced_construction, 3)
           metadata1.queryUser()
           aCon = False
       elif aConstruction == "4":
-          metadata1 = OptionList("set of parameters", "", "parameter")
+          metadata1 = OptionList("set of parameters", "", "parameter", advanced_construction, 4)
           metadata1.queryUser()
           aCon = False
       elif aConstruction == "5":
-          metadata1 = OptionList("set of rules", "", "rules")
+          metadata1 = OptionList("set of rules", "", "rules", advanced_construction, 5)
           metadata1.queryUser()
           aCon = False
       elif aConstruction == "6":
-          metadata1 = OptionList("set of mappings", "", "mappings")
+          metadata1 = OptionList("set of mappings", "", "mappings", advanced_construction, 6)
           metadata1.queryUser()
           aCon = False
       elif aConstruction == "7":
-          metadata1 = OptionList("template metadata", "", "metadata")
+          metadata1 = OptionList("set of conditions", "", "conditions", advanced_construction, 7)
           metadata1.queryUser()
           aCon = False        
       elif aConstruction == "8":
-          metadata1 = OptionList("set of conditions", "", "conditions")
+          metadata1 = OptionList("set of transforms", "", "transforms", advanced_construction, 8)
           metadata1.queryUser()
           aCon = False        
       elif aConstruction == "9":
-          metadata1 = OptionList("set of transforms", "", "transforms")
+          metadata1 = OptionList("set of resources", "", "resources", advanced_construction, 9)
           metadata1.queryUser()
           aCon = False        
       elif aConstruction == "10":
-          metadata1 = OptionList("set of resources", "", "resources")
-          metadata1.queryUser()
-          aCon = False
-      elif aConstruction == "11":
-          metadata1 = OptionList("set of outputs", "", "outputs")
+          metadata1 = OptionList("set of outputs", "", "outputs", advanced_construction, 10)
           metadata1.queryUser()
           aCon = False
       else:
