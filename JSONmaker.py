@@ -15,7 +15,7 @@ heading = f""" {ORANGE}
 print(heading)
 
 #Creating .json template to be modified by the program
-templateText = """
+templateText = """s
 {
   "AWSTemplateFormatVersion" : "version date",
 
