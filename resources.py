@@ -1,12 +1,59 @@
-class OptionList:
+class EC2:
 
-    def __init__(self, optionType, userInput, label, advanced_construction=None, option_number=None):
-        self.optionType = optionType
+    def __init__(self, ResourceType, userInput, label, advanced_construction=None, option_number=None):
+        self.ResourceType = ResourceType
         self.userInput = userInput
         self.label = label
         self.advanced_construction = advanced_construction
         self.option_number = option_number
 
+        #Creating .json template to be modified by the program
+        templateText = """s
+{
+  "AWSTemplateFormatVersion" : "version date",
+
+  "Description" : "JSON string",
+
+  "Metadata" : {
+    template metadata
+  },
+
+  "Parameters" : {
+    set of parameters
+  },
+  
+  "Rules" : {
+    set of rules
+  },
+
+  "Mappings" : {
+    set of mappings
+  },
+
+  "Conditions" : {
+    set of conditions
+  },
+
+  "Transform" : {
+    set of transforms
+  },
+
+  "Resources" : {
+    set of resources
+  },
+  
+  "Outputs" : {
+    set of outputs
+  }
+}
+"""
+
+        #creating a .json file out of the template
+        f1 = open("Rtemp.json", "w")
+        f1.write(templateText)
+        f1.close()
+
+        """
         global explaination
         if self.option_number == 1:
             explaination = "lesgo"
@@ -28,20 +75,21 @@ class OptionList:
             explaination = "lesgo2"
         elif self.option_number == 10:
             explaination = "lesgo2"
+        """
 
 
     def addOptionType(self):
-        with open("CFtemp.json", "r") as file: #open the file made from the template
+        with open("Rtemp.json", "r") as file: #open the file made from the template
             tempdata = file.read() #read the file
-            tempdata = tempdata.replace(self.optionType, self.userInput) #replacing the term with a user provided answer
+            tempdata = tempdata.replace(self.ResourceType, self.userInput) #replacing the term with a user provided answer
 
-        with open("CFtemp.json", "w") as file: #open the file again to write the changes to the file
+        with open("Rtemp.json", "w") as file: #open the file again to write the changes to the file
             file.write(tempdata) #writing the replaced terms to the file
             file.close() #closing the file
 
     def queryUser(self):
-        print(explaination)
-        userInput = input(f"Insert {self.label} for your Cloud Formation template here:")
+        #print(explaination)
+        userInput = input(f"Insert {self.label} for your EC2 resource here:")
         if userInput == "":
             print(f"No {self.label} inserted")
         else:
@@ -53,7 +101,7 @@ class OptionList:
                 self.advanced_construction.update_state(self.option_number)
             
 
-            
+
 class AdvancedConstruction:
     def __init__(self):
         global RED
@@ -149,4 +197,3 @@ class AdvancedConstruction:
         
         """
         print(self.message)
-

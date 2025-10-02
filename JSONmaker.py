@@ -1,5 +1,6 @@
 from module import OptionList
 from module import AdvancedConstruction
+from resources import EC2
 
 ORANGE = '\033[38;5;208m'
 WHITE =  '\033[0m'
@@ -117,9 +118,21 @@ while program == True:
           metadata1.queryUser()
           aCon = False        
       elif aConstruction == "9":
-          metadata1 = OptionList("set of resources", "", "resources", advanced_construction, 9)
-          metadata1.queryUser()
-          aCon = False        
+          #metadata1 = OptionList("set of resources", "", "resources", advanced_construction, 9)
+          #metadata1.queryUser()
+          resourceSelector = input("Please input the number of the option you would like to change: \n 1: add a resource \n 2: remove a resource \n 3: view a resource\n" )
+          if resourceSelector == "1":
+              instance = EC2("resource type", "", "resource type", advanced_construction, 9)  
+              instance.queryUser()
+              #aCon = False
+          if resourceSelector == "2":
+              pass
+              #aCon = False
+          if resourceSelector == "3":
+              pass
+              #aCon = False
+
+                  
       elif aConstruction == "10":
           metadata1 = OptionList("set of outputs", "", "outputs", advanced_construction, 10)
           metadata1.queryUser()
