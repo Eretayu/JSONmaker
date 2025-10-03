@@ -9,19 +9,19 @@ class OptionList:
 
         global explaination
         if self.option_number == 1:
-            explaination = "lesgo"
+            explaination = "The AWS Template Format Version is a date that specifies the latest version of formating that the template will conform to. The AWS JSONmaker uses the 2010-09-09 format version, which is the latest format version. For more information, head to the official AWS documentation at https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure"
         elif self.option_number == 2:
-            explaination = "lesgo2"
+            explaination = "The Description is, very simply, any description you would like to give the template in order to remind yourself or others what it is for later. "
         elif self.option_number == 3:
-            explaination = "lesgo2"
+            explaination = "The AWS metadata section contains any metadata you want the template to hold. For more information about formating requirements, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure"
         elif self.option_number == 4:
-            explaination = "lesgo2"
+            explaination = "Parameters are a way to set values for different resources, so that they can be updated under the 'parameters' subheadin where they are more easily found. Parameters can be complicated, and their formating is difficult. For more information, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure"
         elif self.option_number == 5:
-            explaination = "lesgo2"
+            explaination = "Rules are an optional way to make certain templates only take affect on certain contitions. For more information and formating requirements, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/rules-section-structure"
         elif self.option_number == 6:
-            explaination = "lesgo2"
+            explaination = "Like rules, mappings are used to change certain values conditionally. For more info, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure"
         elif self.option_number == 7:
-            explaination = "lesgo2"
+            explaination = "x"
         elif self.option_number == 8:
             explaination = "lesgo2"
         elif self.option_number == 9:

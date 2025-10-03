@@ -1,6 +1,5 @@
 from module import OptionList
 from module import AdvancedConstruction
-from resources import EC2
 
 ORANGE = '\033[38;5;208m'
 WHITE =  '\033[0m'
@@ -98,45 +97,36 @@ while program == True:
           metadata1.queryUser()
           aCon = False
       elif aConstruction == "4":
-          metadata1 = OptionList("set of parameters", "", "parameter", advanced_construction, 4)
-          metadata1.queryUser()
+          parameters1 = OptionList("set of parameters", "", "parameter", advanced_construction, 4)
+          parameters1.queryUser()
           aCon = False
       elif aConstruction == "5":
-          metadata1 = OptionList("set of rules", "", "rules", advanced_construction, 5)
-          metadata1.queryUser()
+          rules1 = OptionList("set of rules", "", "rules", advanced_construction, 5)
+          rules1.queryUser()
           aCon = False
       elif aConstruction == "6":
-          metadata1 = OptionList("set of mappings", "", "mappings", advanced_construction, 6)
-          metadata1.queryUser()
+          mappings1 = OptionList("set of mappings", "", "mappings", advanced_construction, 6)
+          mappings1.queryUser()
           aCon = False
       elif aConstruction == "7":
-          metadata1 = OptionList("set of conditions", "", "conditions", advanced_construction, 7)
-          metadata1.queryUser()
+          conditions1 = OptionList("set of conditions", "", "conditions", advanced_construction, 7)
+          conditions1.queryUser()
           aCon = False        
       elif aConstruction == "8":
-          metadata1 = OptionList("set of transforms", "", "transforms", advanced_construction, 8)
-          metadata1.queryUser()
+          transforms1 = OptionList("set of transforms", "", "transforms", advanced_construction, 8)
+          transforms1.queryUser()
           aCon = False        
       elif aConstruction == "9":
-          #metadata1 = OptionList("set of resources", "", "resources", advanced_construction, 9)
-          #metadata1.queryUser()
-          resourceSelector = input("Please input the number of the option you would like to change: \n 1: add a resource \n 2: remove a resource \n 3: view a resource\n" )
-          if resourceSelector == "1":
-              instance = EC2("resource type", "", "resource type", advanced_construction, 9)  
-              instance.queryUser()
-              #aCon = False
-          if resourceSelector == "2":
-              pass
-              #aCon = False
-          if resourceSelector == "3":
-              pass
-              #aCon = False
-
-                  
+          resources1 = OptionList("set of resources", "", "resources", advanced_construction, 9)
+          resources1.queryUser()
+          aCon = False         
       elif aConstruction == "10":
-          metadata1 = OptionList("set of outputs", "", "outputs", advanced_construction, 10)
-          metadata1.queryUser()
+          outputs1 = OptionList("set of outputs", "", "outputs", advanced_construction, 10)
+          outputs1.queryUser()
           aCon = False
+      elif aConstruction == "exit":
+        program = False
+        aCon = False
       else:
         print("Invalid option, please try again")
         aCon = False
