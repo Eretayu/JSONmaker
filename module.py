@@ -21,13 +21,13 @@ class OptionList:
         elif self.option_number == 6:
             explaination = "Like rules, mappings are used to change certain values conditionally. For more info, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure"
         elif self.option_number == 7:
-            explaination = "x"
+            explaination = "Conditions are a way to set triggers for when resources are created/configured. For more information on formating, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure"
         elif self.option_number == 8:
-            explaination = "lesgo2"
+            explaination = "The transform section creates macros for the template. Macros are a way to set commands to edit the template after being configured. Macros are complex and their formating is difficult. For more information, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure"
         elif self.option_number == 9:
-            explaination = "lesgo2"
+            explaination = "The resources section defines the resources the template creates. Its formating is some of the more involved, for more information head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure"
         elif self.option_number == 10:
-            explaination = "lesgo2"
+            explaination = "Outputs are a way to define the kind of information and details about the resources defined in the template. To learn more about outputs, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure"
 
 
     def addOptionType(self):
