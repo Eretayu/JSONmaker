@@ -6,7 +6,18 @@ This is a To Do list of all of the things not yet finish for the Cloud Formation
     DONE * The options states/defaults: the options list should have states visible to the user to show if they have finished each option. There should be defaults for all optional parameters, and a way for the user to see these defautls.
     DONE * Classes for each of the ten options, that can be called to modify the template. Ideally there should be one class that interacts with the template, and that class is called by the other ten classes, each of which hold the functions specific to their option.
     DONE * optionExplainer: This is a simple explaination of the option the user is at.
-    * make a way for the user to get their final template after reviewing it.
+    DONE * make a way for the user to get their final template after reviewing it.
 
 - Prebuilts construction: none
    + an option for the user to select a prebuilt system would be nice. Perhaps this option can be researched.
+
+
+
+Conclusion/thoughts:
+   And here we are! Only a single commit awat from the final commit, at least for now. If I had to do this over there would be many changes. I would start the project in a Git Repo instead of migrating to git. I would keep a consistant set of goals focused on just OOP, and I would begin the project with OOP in mind, instead of taking it on like an afterthought.
+   All in all, however, despite the numerous challenges and rehashing of the goal to be something I could finish before the end of October (2025), I would say that for my first real python project ever, and certianly my first OOP project in any langauge, this is a justifyable success.
+   While not setting any records, the code does run with minimal bugs (we'll get to those) and with a lot of learning along the way. First, however, we must briefly touch upon the use of ai. As a beginner programmer, the ability to ask Amazon Q for troubleshooting advice was invaluble. 
+   That being said, these ai tools also mean that it is easier for humans like myself to avoid any sort of critical thinking skills. I think that throughout this project, however, I did manage to learn a lot without a lot of ai use. I think that this balance did work well for me, although being less reliant on Q in the future would probably be beneficial.
+   A couple annodotes should help illistrate this point. Asking Q to troubleshoot a problem, Q instead told me that the issue was that I was calling a class that did not exist, which I could tell was wrong (Q had not read all of the files). This kind of basic ai like mistake is one that I could spot, whereas a basic vibecoder code not. That being said, 
+   there were definately moments when I did not know what Q was doing to solve a problem, and this is something that I need to avoid whenever possible. Also of note is the bugs still in the code, cheif among them how the colors reset whenever you check the final template and then go back to the option selector. This flaw is one that I could undoubtably solve with more time,
+   but frankly speaking I'm ready for the next project and tired of this one. Therefore, it's about time to wrap this project up, and go on to the next one. All in all, I think that the main goal of this proejct, teaching me basic OOP, was largely successful, and I'm ready for the next project.
