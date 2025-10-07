@@ -122,14 +122,17 @@ while program == True:
         program = False
         aCon = False
       elif aConstruction == "done":
-        doubleCheck = input("Are you sure you are finished creating the template? (y/n)")
-        if doubleCheck == "y":
-          check = CheckTemplate(input = "If you are satisfied with your template, press y to download the file. If you are not yet done, press n to resume editting.")
-        elif doubleCheck == "n":
-          aCon = True
-          program = True
-        else:
-           print("Invalid option, please try again")
+          check = CheckTemplate()
+          check.QueryUser()
+          response = check.get_response()
+          if response == "continue":
+            aCon = False
+            advanced_construction = AdvancedConstruction()
+          elif response == "exit":
+            program = False
+            aCon = False
+            
+
 
       else:
         print("Invalid option, please try again")
