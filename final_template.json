@@ -1,38 +1,38 @@
 
 {
-  "AWSTemplateFormatVersion" : "BLANK(1)",
+  "AWSTemplateFormatVersion" : "",
 
-  "Description" : "BLANK(2)",
+  "Description" : "",
 
   "Metadata" : {
-    BLANK(3)
+    
   },
 
   "Parameters" : {
-    BLANK(4)
+    
   },
   
   "Rules" : {
-    BLANK(5)
+    
   },
 
   "Mappings" : {
-    BLANK(6)
+    
   },
 
   "Conditions" : {
-    BLANK(7)
+    
   },
 
   "Transform" : {
-    BLANK(8)
+    
   },
 
   "Resources" : {
-    BLANK(9)
+    
   },
   
   "Outputs" : {
-    BLANK(0)
+    
   }
 }

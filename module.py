@@ -6,28 +6,29 @@ class OptionList:
         self.label = label
         self.advanced_construction = advanced_construction
         self.option_number = option_number
-
+        ORANGE = '\033[38;5;208m'
+        WHITE = '\033[38;5;231m'
         global explaination
         if self.option_number == 1:
-            explaination = "The AWS Template Format Version is a date that specifies the latest version of formating that the template will conform to. The AWS JSONmaker uses the 2010-09-09 format version, which is the latest format version. For more information, head to the official AWS documentation at https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure"
+            explaination = f"{ORANGE}The AWS Template Format Version is a date that specifies the latest version of formating that the template will conform to. The AWS JSONmaker uses the 2010-09-09 format version, which is the latest format version. For more information, head to the official AWS documentation at https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure{WHITE}"
         elif self.option_number == 2:
-            explaination = "The Description is, very simply, any description you would like to give the template in order to remind yourself or others what it is for later. "
+            explaination = f"{ORANGE}The Description is, very simply, any description you would like to give the template in order to remind yourself or others what it is for later.{WHITE}"
         elif self.option_number == 3:
-            explaination = "The AWS metadata section contains any metadata you want the template to hold. For more information about formating requirements, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure"
+            explaination = f"{ORANGE}The AWS metadata section contains any metadata you want the template to hold. For more information about formating requirements, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure{WHITE}"
         elif self.option_number == 4:
-            explaination = "Parameters are a way to set values for different resources, so that they can be updated under the 'parameters' subheadin where they are more easily found. Parameters can be complicated, and their formating is difficult. For more information, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure"
+            explaination = f"{ORANGE}Parameters are a way to set values for different resources, so that they can be updated under the 'parameters' subheadin where they are more easily found. Parameters can be complicated, and their formating is difficult. For more information, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure{WHITE}"
         elif self.option_number == 5:
-            explaination = "Rules are an optional way to make certain templates only take affect on certain contitions. For more information and formating requirements, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/rules-section-structure"
+            explaination = f"{ORANGE}Rules are an optional way to make certain templates only take affect on certain contitions. For more information and formating requirements, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/rules-section-structure{WHITE}"
         elif self.option_number == 6:
-            explaination = "Like rules, mappings are used to change certain values conditionally. For more info, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure"
+            explaination = f"{ORANGE}Like rules, mappings are used to change certain values conditionally. For more info, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure{WHITE}"
         elif self.option_number == 7:
-            explaination = "Conditions are a way to set triggers for when resources are created/configured. For more information on formating, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure"
+            explaination = f"{ORANGE}Conditions are a way to set triggers for when resources are created/configured. For more information on formating, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure{WHITE}"
         elif self.option_number == 8:
-            explaination = "The transform section creates macros for the template. Macros are a way to set commands to edit the template after being configured. Macros are complex and their formating is difficult. For more information, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure"
+            explaination = f"{ORANGE}The transform section creates macros for the template. Macros are a way to set commands to edit the template after being configured. Macros are complex and their formating is difficult. For more information, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure{WHITE}"
         elif self.option_number == 9:
-            explaination = "The resources section defines the resources the template creates. Its formating is some of the more involved, for more information head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure"
+            explaination = f"{ORANGE}The resources section defines the resources the template creates. Its formating is some of the more involved, for more information head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure{WHITE}"
         elif self.option_number == 10:
-            explaination = "Outputs are a way to define the kind of information and details about the resources defined in the template. To learn more about outputs, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure"
+            explaination = f"{ORANGE}Outputs are a way to define the kind of information and details about the resources defined in the template. To learn more about outputs, head to https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure{WHITE}"
 
 
     def addOptionType(self):
@@ -157,15 +158,18 @@ class CheckTemplate:
 
     def QueryUser(self):
         with open("CFtemp.json", "r") as file:
+            ORANGE = '\033[38;5;208m'
+            WHITE = '\033[38;5;231m'
             tempdata = file.read()            
             line = f"this is currently what your CloudFormation template looks like"
             print(line)
-            print(tempdata)            
+            imlosingit = f"{ORANGE}{tempdata}{WHITE}"
+            print(imlosingit)            
             file.close()
         while True:
             user_input = input("Are you satisfied with your template? (y/n)")
             if user_input == "y":
-                print("Thank you for using the AWS Cloud Formation JSONmaker! Your template is being downloaded now!")
+                print("Thank you for using the AWS Cloud Formation JSONmaker! Your template is being exported as final_template.json now!")
                 self.response = "exit"
                 break
             elif user_input == "n":
@@ -177,3 +181,14 @@ class CheckTemplate:
 
     def get_response(self):
         return self.response
+    
+class Export:
+    def __init__(self):
+        import re
+        with open("CFtemp.json", "r") as file:
+            tempdata = file.read()
+            tempdata = re.sub(r'BLANK.{3}', '', tempdata)
+            
+        with open("final_template.json", "w") as file:
+            file.write(tempdata)
+            print("Template exported as final_template.json")
