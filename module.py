@@ -150,3 +150,20 @@ class AdvancedConstruction:
         """
         print(self.message)
 
+
+class CheckTemplate:
+    def __init__(self, input):
+        with open("CFtemp.json", "r") as file:
+            tempdata = file.read()
+            line = f"this is currently what your CloudFormation template looks like"
+            print(line)
+            input = input("Are you satisfied with your template? (y/n)")
+            if input == "y":
+                print("Thank you for using the AWS Cloud Formation JSONmaker!")
+            elif input == "n":
+                print("Okay, let's continue!")
+            else:
+                print("Invalid option, please try again")
+            print(tempdata)
+            file.close()
+

@@ -1,5 +1,6 @@
 from module import OptionList
 from module import AdvancedConstruction
+from module import CheckTemplate
 
 ORANGE = '\033[38;5;208m'
 WHITE =  '\033[0m'
@@ -61,22 +62,15 @@ f1.write(templateText)
 f1.close()
 
 
-while True:
-    text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker! \nIf you would like a simple way to create basic template, type 'a' \nIf you want more control over your template, type 'b'"
-    optionOne = input(text)
-    if optionOne == "a":
-        print("Guided Construction")
-        break
-    elif optionOne == "b":
-        aCon = False
-        break
-    else:
-        print("Invalid option, please try again")
+text = f"{WHITE}Welcome to the AWS Cloud Formation JSONmaker!"
 
+aCon = False
 program = True
-
+print(text)
 # Create the AdvancedConstruction instance once
 advanced_construction = AdvancedConstruction()
+
+
 
 while program == True:
   while aCon == False:
@@ -127,6 +121,17 @@ while program == True:
       elif aConstruction == "exit":
         program = False
         aCon = False
+      elif aConstruction == "done":
+        doubleCheck = input("Are you sure you are finished creating the template? (y/n)")
+        if doubleCheck == "y":
+          check = CheckTemplate(input = "If you are satisfied with your template, press y to download the file. If you are not yet done, press n to resume editting.")
+        elif doubleCheck == "n":
+          aCon = True
+          program = True
+        else:
+           print("Invalid option, please try again")
+
       else:
         print("Invalid option, please try again")
         aCon = False
+
